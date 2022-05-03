@@ -1,4 +1,4 @@
-﻿@model List<Laboratorio3.Models.SongModel>;
+﻿@model Laboratorio3.Models.SongModel;
 
 @{
     ViewData["Title"] = "Song";
@@ -8,13 +8,10 @@
 
 <div>
 
-    @foreach (var item in Model)
-    {
-    
-        <p>Nombre: @item.Name</p>
-        <p>Artista: @item.Artist</p>
-        <p>Album: @item.Album</p>
-        <p>Genero: @item.Genre</p>
-        <p>Released: @item.ReleasedDate</p>
-    }
+    <p>Nombre: @Model.Name</p>
+    <p>Artista: @Model.Artist</p>
+    <p>Album: @Model.Album</p>
+    <p>Genero: @Model.Genre</p>
+    <p>Released: @Model.ReleasedDate</p>
+
 </div>

@@ -11,24 +11,22 @@ namespace Laboratorio3.Controllers
     {
         public IActionResult Index()
         {
-            var songs = GetListOfSongs();
+            var song = GetFavoriteSong();
             ViewBag.MainTitle = "My favorite song";
-            return View(songs);
+            return View(song);
         }
 
-        private List<SongModel> GetListOfSongs()
+        private SongModel GetFavoriteSong()
         {
-            List<SongModel> songs = new List<SongModel>();
-            songs.Add(new SongModel
-            {
-                Id = 1,
-                Name = "Midnight City",
-                Artist = "M83",
-                Album = "Hurry Up, We're Dreaming",
-                Genre = "Alternativa",
-                ReleasedDate = new DateTime(2011, 10, 18)
-            }) ;
-            return songs;
+            SongModel song = new SongModel();
+            song.Id = 1;
+            song.Name = "Midnight City";
+            song.Artist = "M83";
+            song.Album = "Hurry Up, We're Dreaming";
+            song.Genre = "Alternativa";
+            song.ReleasedDate = new DateTime(2011, 10, 18);
+
+            return song;
         }
     }
 }
